@@ -12,18 +12,23 @@ import PropTypes from 'prop-types';
 /*
  * Code
  */
-const Customer = ({ profile }) => (
-  <div className="customer">
-    <div className="customer-name">
-      Nom complet :
-      {profile.last_name}
-      {profile.first_name}
+const Customer = ({ profile }) => {
+  const { first_name, last_name, age } = profile;
+
+  /* eslint-disable camelcase */
+  return (
+    <div className="customer">
+      <div className="customer__name">
+        {`${first_name} ${last_name}`}
+      </div>
+      <div className="customer__age">
+        {age} ans
+      </div>
     </div>
-    <div className="customer-age">
-      Age : {profile.age} ans
-    </div>
-  </div>
-);
+  );
+  /* eslint-enable camelcase */
+};
+
 Customer.propTypes = {
   profile: PropTypes.shape({
     last_name: PropTypes.string.isRequired,

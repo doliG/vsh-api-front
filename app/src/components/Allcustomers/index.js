@@ -19,10 +19,12 @@ export default class Allcustomers extends React.Component {
    */
   state = {}
 
+  /**
+   * Lifecycles
+   */
   componentWillMount() {
     this.setState({
       status: 'Loading',
-      customers: [],
     });
     axios.get('http://vshapi.vaslyn.epi.codes/customers')
       .then(response => this.setState({
@@ -46,10 +48,12 @@ export default class Allcustomers extends React.Component {
     return (
       <div id="allcustomers">
         {customers.map(customer => (
+          /* eslint-disable no-underscore-dangle */
           <Customer
             key={customer._id}
             {...customer}
           />
+          /* eslint-enable no-underscore-dangle */
         ))}
       </div>
     );
