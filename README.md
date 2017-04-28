@@ -9,3 +9,13 @@ Organisation de l'appli :
 | Accueil | Affiche tous les clients | Tableau | En cours |
 | Client | Affiche un client | Page web - profil | En attente |
 | Ajouter un client | Permet d'ajouter un client à la db | Formulaire | En attente |
+
+## Made with :
+
+App :
+- React JS 15.5
+- Brunch
+
+CSS :
+- BEM
+- PostCSS
