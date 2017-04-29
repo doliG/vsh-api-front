@@ -46,16 +46,20 @@ export default class App extends React.Component {
     if (view === 'Allcustomers') {
       return (
         <div id="app">
-          <Header handleView={this.handleView} routes={routes} />
-          <Allcustomers />
+          <Header handleView={this.handleView} routes={routes} view={view} />
+          <div id="view">
+            <Allcustomers />
+          </div>
         </div>
       );
     }
     else if (view === 'Addcustomer') {
       return (
         <div id="app">
-          <Header handleView={this.handleView} routes={routes} />
-          <Addcustomer />
+          <Header handleView={this.handleView} routes={routes} view={view} />
+          <div id="view">
+            <Addcustomer />
+          </div>
         </div>
       );
     }

@@ -1,11 +1,9 @@
-
-
 exports.config =
   files:
     stylesheets:
       joinTo: 'css/app.css'
       order:
-        before: 'app/styles/reset.css'
+        before: ['app/styles/fonts.styl', 'app/styles/reset.styl']
 
     javascripts:
       joinTo: 'js/app.js'
@@ -14,4 +12,3 @@ exports.config =
     babel:
       presets: ['latest', 'react']
       plugins: ['transform-class-properties']
-

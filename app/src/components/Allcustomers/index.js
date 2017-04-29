@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import axios from 'axios';
+import Loader from 'react-loaders';
 
 
 /*
@@ -41,7 +42,7 @@ export default class Allcustomers extends React.Component {
     if (status === 'Loading') {
       return (
         <div id="allcustomers">
-          Loading...
+          <Loader type="triangle-skew-spin" active />
         </div>
       );
     }

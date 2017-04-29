@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 
 /*
@@ -13,12 +14,13 @@ import PropTypes from 'prop-types';
 /*
  * Code
  */
-const Header = ({ routes, handleView }) => (
+const Header = ({ routes, handleView, view }) => (
   <div id="header">
     {routes.map(route => (
       <a
         key={route.name}
         onClick={handleView(route.view)}
+        className={classNames({ active: route.view === view })}
       >
         {route.name}
       </a>
@@ -28,6 +30,7 @@ const Header = ({ routes, handleView }) => (
 Header.propTypes = {
   routes: PropTypes.array.isRequired,
   handleView: PropTypes.func.isRequired,
+  view: PropTypes.string.isRequired,
 };
 
 /**
